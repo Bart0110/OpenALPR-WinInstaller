@@ -15,7 +15,7 @@
 ; --------- ;
 ;Name and file
 !define APP_NAME "OpenALPR"
-!define APP_VERSION "0.0.1"
+!define APP_VERSION "0.0.2"
 !define COMPANY_NAME "OpenALPR WinInstaller"
 !define APP_URL "https://github.com/Bart0110/OpenALPR-WinInstaller"
 
@@ -76,6 +76,9 @@ LangString noRoot ${LANG_ENGLISH} "You cannot install ${APP_NAME} in a directory
 Section
     
     RMDir /r "$INSTDIR"
+
+    ${EnvVarUpdate} $0 "PATH" "R" "HKCU" "$INSTDIR\openalpr_32"
+	${EnvVarUpdate} $0 "PATH" "R" "HKCU" "$INSTDIR\openalpr_64"  
 
 SectionEnd
 
