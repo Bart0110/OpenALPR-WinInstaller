@@ -94,11 +94,11 @@ Section "OpenALPR x32" Sec32
 
 
     SetOutPath "$INSTDIR\openalpr_32"
-    File /r ".\files\openalpr_32\*"
+    File /r ".\openalpr_32\*"
     ExecWait '$INSTDIR\openalpr_32\vc_redist.x86.exe /q /norestart'
 
     SetOutPath "$INSTDIR\openalpr-master"
-    File /r ".\files\openalpr-master\*"
+    File /r ".\openalpr-master\*"
 
 
     ;Store installation folder
@@ -120,11 +120,11 @@ Section "OpenALPR x64" Sec64
 
 
     SetOutPath "$INSTDIR\openalpr_64"
-    File /r ".\files\openalpr_64\*"
+    File /r ".\openalpr_64\*"
     ExecWait '$INSTDIR\openalpr_64\vc_redist.x64.exe /q /norestart'
 
     SetOutPath "$INSTDIR\openalpr-master"
-    File /r ".\files\openalpr-master\*"
+    File /r ".\openalpr-master\*"
 
 
     ;Store installation folder

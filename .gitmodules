@@ -1,0 +1,3 @@
+[submodule "openalpr-master"]
+	path = openalpr-master
+	url = https://github.com/openalpr/openalpr/
