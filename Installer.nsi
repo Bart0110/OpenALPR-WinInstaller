@@ -236,6 +236,7 @@ RMDir /r "$INSTDIR"
 ${un.EnvVarUpdate} $0 "PATH" "R" "HKCU" "$INSTDIR\openalpr_32"
 ${un.EnvVarUpdate} $0 "PATH" "R" "HKCU" "$INSTDIR\openalpr_64"  
 
+DeleteRegKey HKCU "${UNINSTALL_KEY}"
 DeleteRegKey /ifempty HKCU "Software\OpenALPR"
 
 SectionEnd
