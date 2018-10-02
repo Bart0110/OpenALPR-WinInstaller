@@ -18,7 +18,7 @@
   !define APP_NAME "OpenALPR"
 
   Name "${APP_NAME}"
-  OutFile "${APP_NAME}.exe"
+  OutFile ".\build\${APP_NAME}.exe"
 
   ;Default installation folder
   InstallDir "$LOCALAPPDATA\OpenALPR"
