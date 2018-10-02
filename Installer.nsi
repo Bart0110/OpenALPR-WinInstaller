@@ -78,7 +78,7 @@ Section
     RMDir /r "$INSTDIR"
 
     ${EnvVarUpdate} $0 "PATH" "R" "HKCU" "$INSTDIR\openalpr_32"
-	${EnvVarUpdate} $0 "PATH" "R" "HKCU" "$INSTDIR\openalpr_64"  
+    ${EnvVarUpdate} $0 "PATH" "R" "HKCU" "$INSTDIR\openalpr_64"  
 
 SectionEnd
 
@@ -220,10 +220,10 @@ FunctionEnd
 ; ----------------------------- ;
 Function .onSelChange
 
-  !insertmacro StartRadioButtons $9
-    !insertmacro RadioButton ${Sec32}
-    !insertmacro RadioButton ${Sec64}
-  !insertmacro EndRadioButtons
+    !insertmacro StartRadioButtons $9
+        !insertmacro RadioButton ${Sec32}
+        !insertmacro RadioButton ${Sec64}
+    !insertmacro EndRadioButtons
 
 FunctionEnd
 
@@ -232,15 +232,15 @@ FunctionEnd
 ; --------------------- ;
 Section "Uninstall"
 
-Delete "$INSTDIR\Uninstall.exe"
+    Delete "$INSTDIR\Uninstall.exe"
 
-RMDir /r "$INSTDIR"
+    RMDir /r "$INSTDIR"
 
-${un.EnvVarUpdate} $0 "PATH" "R" "HKCU" "$INSTDIR\openalpr_32"
-${un.EnvVarUpdate} $0 "PATH" "R" "HKCU" "$INSTDIR\openalpr_64"  
+    ${un.EnvVarUpdate} $0 "PATH" "R" "HKCU" "$INSTDIR\openalpr_32"
+    ${un.EnvVarUpdate} $0 "PATH" "R" "HKCU" "$INSTDIR\openalpr_64"  
 
-DeleteRegKey HKCU "${UNINSTALL_KEY}"
-DeleteRegKey /ifempty HKCU "Software\OpenALPR"
+    DeleteRegKey HKCU "${UNINSTALL_KEY}"
+    DeleteRegKey /ifempty HKCU "Software\OpenALPR"
 
 SectionEnd
 
@@ -286,15 +286,15 @@ FunctionEnd
 ;  Check install dir  ;
 ; ------------------- ;
 Function CloseBrowseForFolderDialog
-	!ifmacrodef "_P<>" ; NSIS 3+
-		System::Call 'USER32::GetActiveWindow()p.r0'
-		${If} $0 P<> $HwndParent
-	!else
-		System::Call 'USER32::GetActiveWindow()i.r0'
-		${If} $0 <> $HwndParent
-	!endif
-		SendMessage $0 ${WM_CLOSE} 0 0
-		${EndIf}
+    !ifmacrodef "_P<>" ; NSIS 3+
+        System::Call 'USER32::GetActiveWindow()p.r0'
+        ${If} $0 P<> $HwndParent
+    !else
+        System::Call 'USER32::GetActiveWindow()i.r0'
+        ${If} $0 <> $HwndParent
+    !endif
+        SendMessage $0 ${WM_CLOSE} 0 0
+        ${EndIf}
 FunctionEnd
 
 Function .onVerifyInstDir
