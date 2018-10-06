@@ -15,7 +15,7 @@
 ; --------- ;
 ;Name and file
 !define APP_NAME "OpenALPR"
-!define APP_VERSION "0.0.2"
+!define APP_VERSION "0.0.3"
 !define COMPANY_NAME "OpenALPR WinInstaller"
 !define APP_URL "https://github.com/Bart0110/OpenALPR-WinInstaller"
 
