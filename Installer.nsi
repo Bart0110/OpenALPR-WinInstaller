@@ -140,7 +140,7 @@ SectionEnd
 Section "Python bindings" SecPython
 
     SetOutPath "$INSTDIR\openalpr-master\src\bindings\python\"
-    ExecWait 'python setup.py install'
+    nsExec::ExecToStack 'python setup.py install'
 
 SectionEnd
 
